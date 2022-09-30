@@ -21,4 +21,24 @@ public class ManageServerThread {
     public static UserServerThread getThread(String userId){
         return map.get(userId);
     }
+    //获取所有用户
+    public static String getAllUser() {
+        //遍历map即可
+        StringBuffer sb = new StringBuffer();
+        for (String userId : map.keySet()) {
+            sb.append(userId);
+            sb.append(" ");
+
+        }
+        return sb.toString();
+    }
+
+    //移除线程
+    public static void removeThread(String userId){
+        map.remove(userId);
+    }
+    //返回所有的线程
+    public static Map<String, UserServerThread> getMap(){
+        return map;
+    }
 }

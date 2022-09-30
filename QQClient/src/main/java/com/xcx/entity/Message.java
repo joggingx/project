@@ -12,14 +12,54 @@ public class Message implements Serializable {
     private String sender;//发送者
     private String receiver;//接收者
     private String sendTime;//发送时间
-    private String msgType;
-
+    private String msgType;//信息类型
+    private String content;//信息内容
+    private String fileSrc;//文件源路径
+    private String fileDest;//文件目标路径
+    private byte[] fileBytes;//文件转成的字节数组
     public Message(){}
-    public Message(String sender, String receiver, String sendTime, String msgType){
+
+    public Message(String sender, String receiver, String sendTime, String msgType, String content, String fileSrc, String fileDest, byte[] fileBytes) {
         this.sender = sender;
         this.receiver = receiver;
         this.sendTime = sendTime;
         this.msgType = msgType;
+        this.content = content;
+        this.fileSrc = fileSrc;
+        this.fileDest = fileDest;
+        this.fileBytes = fileBytes;
+    }
+
+    public String getFileSrc() {
+        return fileSrc;
+    }
+
+    public void setFileSrc(String fileDesc) {
+        this.fileSrc = fileDesc;
+    }
+
+    public String getFileDest() {
+        return fileDest;
+    }
+
+    public void setFileDest(String fileDest) {
+        this.fileDest = fileDest;
+    }
+
+    public byte[] getFileBytes() {
+        return fileBytes;
+    }
+
+    public void setFileBytes(byte[] fileBytes) {
+        this.fileBytes = fileBytes;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getReceiver() {

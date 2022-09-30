@@ -17,7 +17,7 @@ public class ManageClientThread {//管理客户端的线程
     }
 
     //通过用户id获取线程对象
-    public UserClientThread getThread(String userId){
+    public static UserClientThread getThread(String userId){
         return map.get(userId);
     }
 }
